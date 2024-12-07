@@ -1,0 +1,22 @@
+{
+  "name": "biblebites",
+  "version": "1.0.0",
+  "description": "An application for bible questions and answers",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon App.js",
+    "gen-tail": "npx tailwindcss -i tailwindcss.css -o ./public/css/genTail.css --watch"
+  },
+  "author": "Bismark Owusu",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.16"
+  }
+}
