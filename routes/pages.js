@@ -1,11 +1,28 @@
 const router = require('express').Router()
-const questions = require('../static-db/questionsBank');
+const generalQuestions = require('../static-db/generalQuestions');
+const churchHistoryQuestions = require('../static-db/churchHistoryQuestions');
 const nodemailer = require('nodemailer');
+const bibleStoryQuestions = require('../static-db/bibleStoryQuestions');
+const bibleQuotesQuestions = require('../static-db/bibleQuatesQuestions');
 
 
 router.get('/' , (req , res)=>{
-   res.render('index',{questions: questions})
+   res.render('index',{questions: generalQuestions})
 })
+
+router.get('/church-history' , (req , res)=>{
+   res.render('index',{questions: churchHistoryQuestions})
+})
+
+router.get('/bible-story' , (req , res)=>{
+   res.render('index',{questions: bibleStoryQuestions})
+})
+
+router.get('/quote-books' , (req , res)=>{
+   res.render('index',{questions: bibleQuotesQuestions})
+})
+
+
 
 router.post('/send-message',(req, res) => {
    const {name, email, message} = req.body;

@@ -14,3 +14,17 @@ window.addEventListener('scroll', ()=> {
             navbar.classList.remove('scrolling');
     }
 });
+
+const categoryBtn = document.getElementById('categoryBtn');
+const categoryMenu = document.getElementById('categoryMenu');
+
+categoryBtn.addEventListener('click', ()=> {
+    categoryMenu.classList.toggle('hidden');
+});
+
+// Close the menu when clicking outside
+document.addEventListener('click', (e)=> {
+    if (!categoryBtn.contains(e.target) && !categoryMenu.contains(e.target)) {
+      categoryMenu.classList.add('hidden');
+    }
+  });
